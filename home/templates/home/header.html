@@ -4,9 +4,11 @@
 <!-- ******HEADER****** --> 
 <header class="header">
     <div class="container clearfix">                       
-        <img class="profile-image img-fluid float-left rounded-circle" src="{% static 'images/profile.png' %}" alt="profile image" />
+        
+        <img class="profile-image img-fluid float-left rounded-circle" src="{{ MEDIA_URL }}{{ Profile_pic.image.url }}" height="420" alt="{{ Profile_pic.title }}" />
+        
         <div class="profile-content float-left">
-            <h1 class="name">James Lee</h1>
+            <h1 class="name">Obaidullah Tusher{{ Profile.instance.name }}</h1>
             <h2 class="desc">Web App Developer</h2>   
             <ul class="social list-inline">
                 <li class="list-inline-item"><a href="#"><i class="fab fa-facebook"></i></a></li>
@@ -16,6 +18,7 @@
                               
             </ul> 
         </div><!--//profile-->
+
         <a class="btn btn-cta-primary float-right" href="https://themes.3rdwavemedia.com/" target="_blank"><i class="fas fa-paper-plane"></i> Download CV</a>              
     </div><!--//container-->
 </header><!--//header-->
