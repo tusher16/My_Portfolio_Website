@@ -5,11 +5,11 @@
 <header class="header">
     <div class="container clearfix">                       
         
-        <img class="profile-image img-fluid float-left rounded-circle" src="{{ MEDIA_URL }}{{ Profile_pic.image.url }}" height="420" alt="{{ Profile_pic.title }}" />
+        <img class="profile-image img-fluid float-left rounded-circle" src="{{ home.Profile_pic.url }}" height="420" alt="{{ Profile_pic.name }}" />
         
         <div class="profile-content float-left">
-            <h1 class="name">Obaidullah Tusher{{ Profile.instance.name }}</h1>
-            <h2 class="desc">Web App Developer</h2>   
+            <h1 class="name">{{ name }}</h1>
+            <h2 class="desc">{{recent_status}}</h2>   
             <ul class="social list-inline">
                 <li class="list-inline-item"><a href="#"><i class="fab fa-facebook"></i></a></li>
                 <li class="list-inline-item"><a href="#"><i class="fab fa-linkedin-in"></i></a></li>

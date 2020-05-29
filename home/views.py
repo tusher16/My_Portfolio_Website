@@ -2,24 +2,20 @@ from django.shortcuts import render
 
 # Create your views here.
 
-from .models import *
+from .models import Profile
 
-def home(request):
+def home_view_header(request):
 
-    profile = Profile.objects.all()
+    obj = Profile.objects.get()
 
-    
-    
-    context = {'Profile': Profile}
-    return render(request, 'home/index.html', context)
+    context = {
+        'name': obj.name,
+        'recent_status': obj.recent_status,
+        'Profile_pic': obj.Profile_pic,
+        'recent_status': obj.recent_status,
+        }
+
+    return render(request, "home/index.html", context)
 
 
-def header(request):
-    profile = Profile.objects.all()
-
-    
-    
-    context = {'Profile': Profile}
-    
-    return render(request, 'home/header.html', context)
 
