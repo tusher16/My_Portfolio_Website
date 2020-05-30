@@ -32,6 +32,27 @@ class Profile(models.Model):
         blank=True
     )
 
+    researchgate_link = models.URLField(("researchgate_link"), 
+        max_length=128, 
+        db_index=True, 
+        unique=True, 
+        blank=True
+    )
+
+    google_sch_link= models.URLField(("google_sch_link"), 
+        max_length=128, 
+        db_index=True, 
+        unique=True, 
+        blank=True
+    )
+
+    my_website_link = models.URLField(("my_website_link"), 
+        max_length=128, 
+        db_index=True, 
+        unique=True, 
+        blank=True
+    )
+
     resume = models.FileField(("resume"), 
         max_length=100,
         )
@@ -42,6 +63,9 @@ class Profile(models.Model):
 
     date_created = models.DateTimeField(auto_now_add=True, null=True)
 
+    About_Me = models.TextField(max_length=800, null=True)
+
+    my_address = models.CharField(max_length=100, null=True)
 
     def __str__(self):
         return self.name
