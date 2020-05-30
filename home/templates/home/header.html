@@ -1,11 +1,10 @@
-{% load static %}
 
 
 <!-- ******HEADER****** --> 
 <header class="header">
     <div class="container clearfix">                       
         
-        <img class="profile-image img-fluid float-left rounded-circle" src="{{ home.Profile_pic.url }}" height="420" alt="{{ Profile_pic.name }}" />
+        <img class="profile-image img-fluid float-left rounded-circle" src="media/{{ Profile_pic }}" width="200" height="200" alt="{{ Profile_pic.name }}" />
         
         <div class="profile-content float-left">
             <h1 class="name">{{ name }}</h1>
@@ -19,6 +18,6 @@
             </ul> 
         </div><!--//profile-->
 
-        <a class="btn btn-cta-primary float-right" href="https://themes.3rdwavemedia.com/" target="_blank"><i class="fas fa-paper-plane"></i> Download CV</a>              
+        <a class="btn btn-cta-primary float-right" href="media/{{ resume }}" target="_blank"><i class="fas fa-paper-plane"></i> Download CV</a>              
     </div><!--//container-->
 </header><!--//header-->
