@@ -69,4 +69,11 @@ class Profile(models.Model):
 
     def __str__(self):
         return self.name
-    
+
+class Projects(models.Model):
+
+    project_name = models.CharField(max_length=100)
+
+    project_details = models.TextField(max_length=800, null=True)
+
+    #Project_latest = models.
