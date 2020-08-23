@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils import timezone
 
 # Create your models here.
 
@@ -77,3 +78,22 @@ class Projects(models.Model):
     project_details = models.TextField(max_length=800, null=True)
 
     #Project_latest = models.
+
+
+#scraping class for scrap linked in work_Experience data
+class Work_Experience(models.Model):
+    #url = models.CharField(max_length=250, unique=True)
+    Company_Name = models.CharField(max_length=250)
+    Total_Duration = models.CharField(max_length=250)
+    Job_Role = models.CharField(max_length=250)
+    Duration = models.CharField(max_length=250)
+    Role_Type = models.CharField(max_length=250)
+    Job_address = models.CharField(max_length=250)
+    Job_Details = models.CharField(max_length=250)
+    created_date = models.DateTimeField(default=timezone.now)
+    def __str__(self):
+        return self.Company_Name
+    class Meta:
+        ordering = ['Company_Name']
+    class Admin:
+        pass
