@@ -16,7 +16,7 @@ class Command(BaseCommand):
         postings = soup.find_all("div", class_="posting")
         for p in postings:
             url = p.find('a', class_='posting-btn-submit')['href']
-            title = p.find('h5').text
+            Company_Name = p.find('h5').text
             location = p.find('span', class_='sort-by-location').text
             # check if url in db
             try:
@@ -26,7 +26,7 @@ class Command(BaseCommand):
                     title=title,
                     location=location
                 )
-                print('%s added' % (title,))
+                print('%s added' % (Company_Name,))
             except:
-                print('%s already exists' % (title,))
+                print('%s already exists' % (Company_Name,))
         self.stdout.write( 'job complete' )
