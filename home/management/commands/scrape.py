@@ -15,14 +15,18 @@ class Command(BaseCommand):
         # grab all postings
         postings = soup.find_all("div", class_="posting")
         for p in postings:
-            url = p.find('a', class_='posting-btn-submit')['href']
             Company_Name = p.find('h5').text
-            location = p.find('span', class_='sort-by-location').text
+            Total_Duration = p.find('span', class_='sort-by-location').text
+            Job_Role = p.find('h5').text
+            Duration = p.find('h5').text
+            Role_Type = p.find('h5').text
+            Job_address = p.find('h5').text
+            Job_Details = p.find('h5').text
+
             # check if url in db
             try:
                 # save in db
                 Work_Experience.objects.create(
-                    url=url,
                     title=title,
                     location=location
                 )

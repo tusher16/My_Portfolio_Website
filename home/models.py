@@ -83,14 +83,15 @@ class Projects(models.Model):
 #scraping class for scrap linked in work_Experience data
 class Work_Experience(models.Model):
     #url = models.CharField(max_length=250, unique=True)
-    Company_Name = models.CharField(max_length=250)
-    Total_Duration = models.CharField(max_length=250)
-    Job_Role = models.CharField(max_length=250)
-    Duration = models.CharField(max_length=250)
-    Role_Type = models.CharField(max_length=250)
-    Job_address = models.CharField(max_length=250)
-    Job_Details = models.CharField(max_length=250)
-    created_date = models.DateTimeField(default=timezone.now)
+    Company_Name = models.CharField(max_length=250,null=True)
+    Total_Duration = models.CharField(max_length=250,null=True)
+    Job_Role = models.CharField(max_length=250,null=True)
+    Duration = models.CharField(max_length=250,null=True)
+    Role_Type = models.CharField(max_length=250,null=True)
+    Job_address = models.CharField(max_length=250,null=True)
+    Job_Details = models.TextField(max_length=800, null=True)
+    created_date = models.DateTimeField(default=timezone.now,null=True)
+    
     def __str__(self):
         return self.Company_Name
     class Meta:
